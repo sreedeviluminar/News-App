@@ -7,11 +7,9 @@ import 'package:news_app_with_api/view/bottom_nav_bar/Main_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class MyApp extends StatelessWidget {
           create: (context) => CategoryController(),
         )
       ],
-      child: const MaterialApp(
+      child:  MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MainPage(),
       ),

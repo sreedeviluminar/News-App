@@ -11,9 +11,13 @@ class BottomNavController with ChangeNotifier {
     notifyListeners();
   }
 
-  List<Widget> myPages = [HomeScreen(), CAtegoryScreen(), SearchScreen()];
-  //
-  // @override
+  List<Widget> myPages = [
+    HomeScreen(),
+    CAtegoryScreen(),
+    SearchScreen()
+  ];
+
+// @override
   // void notifyListeners() {
   //   // TODO: implement notifyListeners
   //   super.notifyListeners();

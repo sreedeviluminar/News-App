@@ -12,10 +12,7 @@ class NewsModel {
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
         status: json["status"],
         totalResults: json["totalResults"],
-        articles: json["articles"] == null
-            ? []
-            : List<Article>.from(
-                json["articles"]!.map((x) => Article.fromJson(x))),
+        articles: json["articles"] == null ? [] : List<Article>.from(json["articles"]!.map((x) => Article.fromJson(x))),
       );
 }
 
@@ -47,9 +44,7 @@ class Article {
         description: json["description"],
         url: json["url"],
         urlToImage: json["urlToImage"],
-        publishedAt: json["publishedAt"] == null
-            ? null
-            : DateTime.parse(json["publishedAt"]),
+        publishedAt: json["publishedAt"] == null ? null : DateTime.parse(json["publishedAt"]),
         content: json["content"],
       );
 }

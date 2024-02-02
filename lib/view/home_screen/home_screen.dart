@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -18,11 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     fetchData();
   }
-
-  void fetchData() async {
+  void fetchData()  {
     Provider.of<HomeScreenController>(context, listen: false).fetchData();
   }
-
   @override
   Widget build(BuildContext context) {
     HomeScreenController provider = Provider.of<HomeScreenController>(context);
@@ -31,10 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color(0xff6A3DE8),
         elevation: 0,
         title: const Text(
-          "News Today 📰",
+          "News Today 🗞️",
         ),
         titleTextStyle: const TextStyle(
-            color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+            color: Colors.white, fontSize: 20,
+            fontWeight: FontWeight.w600),
         actions: [
           IconButton(
             onPressed: () {
@@ -62,8 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.separated(
                   itemBuilder: (context, index) => NewsCard(
                         title: provider.newsModel.articles?[index].title
-                                .toString() ??
-                            "",
+                                .toString() ?? "",
                         description: provider
                                 .newsModel.articles?[index].description
                                 .toString() ??
