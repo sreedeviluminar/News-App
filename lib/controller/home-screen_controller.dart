@@ -41,6 +41,7 @@ class HomeScreenController with ChangeNotifier {
     notifyListeners();
   }
 
+///to share news
   void shareText({String textToShare = ""}) {
     try {
       Share.share(textToShare);
