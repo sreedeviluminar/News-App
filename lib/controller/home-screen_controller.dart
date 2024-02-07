@@ -29,9 +29,10 @@ class HomeScreenController with ChangeNotifier {
 
   // Function to launch a URL
   Future<void> launchURL(String url) async {
+    final Uri url1 = Uri.parse(url);
     try {
-      if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url));
+      if (!await launchUrl(url1,mode: LaunchMode.inAppWebView)) {
+        await launchUrl(url1,mode: LaunchMode.inAppWebView);
       } else {
         throw 'Could not launch $url';
       }
@@ -41,7 +42,13 @@ class HomeScreenController with ChangeNotifier {
     notifyListeners();
   }
 
-///to share news
+  // void _launchURL(String url) async {
+  //   final Uri _url = Uri.parse(url);
+  //   if (!await launchUrl(_url,mode: LaunchMode.inAppWebView)) {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
+  ///to share news
   void shareText({String textToShare = ""}) {
     try {
       Share.share(textToShare);

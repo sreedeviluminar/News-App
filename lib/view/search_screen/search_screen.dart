@@ -12,16 +12,11 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     TextEditingController textController = TextEditingController();
-    SearchScreenController provider =
-        Provider.of<SearchScreenController>(context);
+    SearchScreenController provider = Provider.of<SearchScreenController>(context);
     return Scaffold(
       body: SafeArea(
           child: Padding(
@@ -53,8 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      provider.searchData(
-                          searchText: textController.text.toLowerCase());
+                      provider.searchData(searchText: textController.text.toLowerCase());
                       FocusManager.instance.primaryFocus?.unfocus();
                     },
                     child: Text(

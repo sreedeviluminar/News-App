@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app_with_api/model/news_model.dart';
@@ -12,8 +11,7 @@ class SearchScreenController with ChangeNotifier {
     isLoading = true;
     notifyListeners();
 
-    final url = Uri.parse(
-        "https://newsapi.org/v2/everything?q=$searchText&sortBy=popularity&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
+    final url = Uri.parse("https://newsapi.org/v2/everything?q=$searchText&sortBy=popularity&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
 
     try {
       final response = await http.get(

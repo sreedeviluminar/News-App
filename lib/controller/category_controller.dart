@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app_with_api/model/news_model.dart';
 
@@ -13,7 +13,6 @@ class CategoryController with ChangeNotifier {
     "Sports",
     "Technology"
   ];
-
   String category = "business";
 
   onTap({required int index}) {
@@ -25,6 +24,7 @@ class CategoryController with ChangeNotifier {
 
   late NewsModel newsModel;
   bool isLoading = false;
+
   fetchData() async {
     isLoading = true;
     notifyListeners();
