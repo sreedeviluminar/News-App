@@ -3,13 +3,11 @@ import 'package:news_app_with_api/controller/bottom_nav_controller.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Provider.of<BottomNavController>(context)
           .myPages[Provider.of<BottomNavController>(context).selectedIndex],
-
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
         child: Container(
