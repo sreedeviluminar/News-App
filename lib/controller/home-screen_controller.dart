@@ -14,8 +14,8 @@ class HomeScreenController with ChangeNotifier {
   fetchData() async {
     isLoading = true;
     notifyListeners();
-    final url = Uri.parse("$baseUrl/v2/top-headlines?country=in&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
-    final response = await http.get(url);
+    final url = "$baseUrl/v2/top-headlines?country=in&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5";
+    final response = await http.get(Uri.parse(url));
     print(response.statusCode);
 
     Map<String, dynamic> decodedData = {}; // map for storing response body
@@ -43,14 +43,7 @@ class HomeScreenController with ChangeNotifier {
     }
     notifyListeners();
   }
-
-  // void _launchURL(String url) async {
-  //   final Uri _url = Uri.parse(url);
-  //   if (!await launchUrl(_url,mode: LaunchMode.inAppWebView)) {
-  //     throw 'Could not launch $url';
-  //   }
-  // }https://us02web.zoom.us/j/87594727659?pwd=YmZLaWVFZXpkTDVYMkN4NWh6bHBRdz09
-  ///to share news
+ ///to share news
   void shareText({String textToShare = ""}) {
     try {
       Share.share(textToShare);
