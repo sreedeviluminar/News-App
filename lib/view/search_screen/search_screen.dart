@@ -4,14 +4,7 @@ import 'package:news_app_with_api/controller/search_screen_controller.dart';
 import 'package:news_app_with_api/view/widgets/news_card.dart';
 import 'package:provider/provider.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
-
-  @override
-  State<SearchScreen> createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
+class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +44,13 @@ class _SearchScreenState extends State<SearchScreen> {
                       provider.searchData(searchText: textController.text.toLowerCase());
                       FocusManager.instance.primaryFocus?.unfocus();
                     },
-                    child: Text(
+                    style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(Color(0xff6A3DE8))),
+                    child: const Text(
                       "Search",
                       style: TextStyle(color: Colors.white),
                     ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Color(0xff6A3DE8))),
                   ),
                 )
               ],
