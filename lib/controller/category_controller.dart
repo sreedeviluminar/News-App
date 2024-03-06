@@ -21,13 +21,11 @@ class CategoryController with ChangeNotifier {
     print(category);
     notifyListeners();
   }
-
   late NewsModel newsModel;
   bool isLoading = false;
 
   fetchData() async {
     isLoading = true;
-    notifyListeners();
     final url = Uri.parse(
         "https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
     print(category);

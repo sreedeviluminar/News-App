@@ -6,6 +6,7 @@ import 'package:news_app_with_api/view/widgets/news_card.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+
   void fetchData(BuildContext context) {
     Provider.of<HomeScreenController>(context, listen: false).fetchData();
   }
