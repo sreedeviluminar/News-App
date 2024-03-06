@@ -13,7 +13,6 @@ class HomeScreenController with ChangeNotifier {
 
   fetchData() async {
     isLoading = true;
-    notifyListeners();
     final url = "$baseUrl/v2/top-headlines?country=in&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5";
     final response = await http.get(Uri.parse(url));
     print(response.statusCode);
