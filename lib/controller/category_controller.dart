@@ -21,6 +21,7 @@ class CategoryController with ChangeNotifier {
     print(category);
     notifyListeners();
   }
+
   late NewsModel newsModel;
   bool isLoading = false;
 
