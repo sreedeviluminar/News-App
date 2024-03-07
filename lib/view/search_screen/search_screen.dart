@@ -5,7 +5,6 @@ import 'package:news_app_with_api/view/widgets/news_card.dart';
 import 'package:provider/provider.dart';
 
 class SearchScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     TextEditingController textController = TextEditingController();
@@ -31,7 +30,8 @@ class SearchScreen extends StatelessWidget {
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Color(0xff6A3DE8), width: 3)),
+                              color: Color(0xff6A3DE8),
+                              width: 3)),
                     ),
                   ),
                 ),
@@ -41,7 +41,8 @@ class SearchScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      provider.searchData(searchText: textController.text.toLowerCase());
+                      provider.searchData(
+                          searchText: textController.text.toLowerCase());
                       FocusManager.instance.primaryFocus?.unfocus();
                     },
                     style: const ButtonStyle(
@@ -56,8 +57,8 @@ class SearchScreen extends StatelessWidget {
               ],
             ),
             Expanded(
-              child: Provider.of<SearchScreenController>(context).isLoading ==
-                      true
+              child: Provider.of<SearchScreenController>(context).
+              isLoading == true
                   ? Center(
                       child: LottieBuilder.asset(
                       "assets/animations/Animation - 1702395258490 (2).json",
