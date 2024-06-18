@@ -35,13 +35,12 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  http:
-  intl:
-  url_launcher:
-  share:
-  provider:
-  lottie:
-  shimmer:
+  http: #for rest api integration
+  intl:  #here it is used to set date format
+  url_launcher: #to establish click here to read more option to load url as webpage
+  share:  #use share_plus package instead of share implement share optionss
+  provider: #used for state management
+  lottie:  #animation
   google_fonts: 6.1.0
 
 
