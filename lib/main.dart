@@ -11,7 +11,6 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Consumer<SplashScreenProvider>(
-            builder: (context, splashScreenProvider, _) {
+            builder: (context, splashScreenProvider, widget) {
               return splashScreenProvider.isLoading
                   ? SplashScreen()
                   : MainPage(); // Replace with your home screen

@@ -38,7 +38,7 @@ dependencies:
   http: #for rest api integration
   intl:  #here it is used to set date format
   url_launcher: #to establish click here to read more option to load url as webpage
-  share:  #use share_plus package instead of share implement share optionss
+  share:  #use share_plus package instead of share implement share options
   provider: #used for state management
   lottie:  #animation
   google_fonts: 6.1.0
