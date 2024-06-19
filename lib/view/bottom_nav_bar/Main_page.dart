@@ -6,6 +6,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Provider.of<BottomNavController>(context)
           .myPages[Provider.of<BottomNavController>(context).selectedIndex],
       bottomNavigationBar: Padding(
