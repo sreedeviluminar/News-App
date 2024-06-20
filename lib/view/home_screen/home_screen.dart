@@ -57,7 +57,8 @@ class HomeScreen extends StatelessWidget {
                             sourceName: provider.newsModel.articles?[index].source?.name.toString() ?? "",
                             url: provider.newsModel.articles?[index].url.toString() ?? "",
                           ),
-                      separatorBuilder: (context, index) => const Divider(
+                      separatorBuilder:
+                          (context, index) => const Divider(
                             height: 20,
                           ),
                       itemCount: provider.newsModel.articles?.length ?? 0),

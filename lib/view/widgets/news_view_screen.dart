@@ -58,10 +58,11 @@ class NewsViewScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(10),
                     image: DecorationImage(
-                        image: NetworkImage(imageUrl), fit: BoxFit.cover)),
+                        image: NetworkImage(imageUrl),
+                        fit: BoxFit.cover)),
               ),
               Text(
-                "$description",
+                description,
                 style:
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
@@ -70,26 +71,24 @@ class NewsViewScreen extends StatelessWidget {
               ),
               SingleChildScrollView(
                 child: Text(
-                  "$contant",
-                  style:
-                  const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                  contant,
+                  style: const TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.w500),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              InkWell(
-                onTap: () {
+              TextButton(
+                child: const Text("Click here to Read more......",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontStyle: FontStyle.italic,
+                        color: Colors.blue)),
+                onPressed: () {
                   Provider.of<HomeScreenController>(context, listen: false)
                       .launchURL(url);
                 },
-                child: const Text(
-                  "Click heare to Read more",
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.blue),
-                ),
               ),
             ],
           ),

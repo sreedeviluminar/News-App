@@ -5,8 +5,15 @@ import 'package:news_app_with_api/view/widgets/news_view_screen.dart';
 import 'package:provider/provider.dart';
 
 class NewsCard extends StatelessWidget {
-  const NewsCard(
-      {super.key,
+  final String title;
+  final String description;
+  final DateTime? date;
+  final String imageUrl;
+  final String contant;
+  final String sourceName;
+  final String url;
+
+  const NewsCard({super.key,
       required this.title,
       required this.description,
       required this.date,
@@ -15,13 +22,6 @@ class NewsCard extends StatelessWidget {
       required this.sourceName,
       required this.url});
 
-  final String title;
-  final String description;
-  final DateTime? date;
-  final String imageUrl;
-  final String contant;
-  final String sourceName;
-  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -90,3 +90,4 @@ class NewsCard extends StatelessWidget {
     );
   }
 }
+
