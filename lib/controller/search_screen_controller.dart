@@ -8,12 +8,11 @@ class SearchScreenController with ChangeNotifier {
   bool isLoading = false;
   Future<void> searchData({required String searchText}) async {
     isLoading = true;
-    final url = Uri.parse("https://newsapi.org/v2/everything?q=$searchText&sortBy=popularity&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
+    final url = Uri.parse("https://newsapi.org/v2/everything?q=$searchText&sortBy=publishedAt&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5");
     try {
       final response = await http.get(url,
         headers: {
-          'Content-Type': 'application/json',
-        },);
+          'Content-Type': 'application/json', });
       print(response.statusCode);
       if (response.statusCode == 200) {
         final Map<String, dynamic> decodedData = jsonDecode(response.body);

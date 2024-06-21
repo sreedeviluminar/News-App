@@ -14,7 +14,7 @@ class HomeScreenController with ChangeNotifier {
   ///TO PROCESS API AND GET RESPONSE
   fetchData() async {
     isLoading = true;
-    // baseutl+endpoint-> https://newsapi.org/v2/top-headlines?country=us&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5
+    // baseutl+endpoint-> https://newsapi.org/v2/top-headlines?country=in&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5
     final url = "$baseUrl/v2/top-headlines?country=in&apiKey=49fe83b5cf85471f8bd4d35ff3f208a5";
     final response = await http.get(Uri.parse(url));
     print(response.statusCode);

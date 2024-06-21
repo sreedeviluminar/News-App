@@ -3,11 +3,10 @@ import 'package:lottie/lottie.dart';
 import 'package:news_app_with_api/controller/category_controller.dart';
 import 'package:news_app_with_api/view/widgets/news_card.dart';
 import 'package:provider/provider.dart';
-
 class CAtegoryScreen extends StatelessWidget {
-
   void fetchData(BuildContext context) async {
-    Provider.of<CategoryController>(context, listen: false).fetchData();
+    Provider.of<CategoryController>
+      (context, listen: false).fetchData();
   }
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class CAtegoryScreen extends StatelessWidget {
                     color: Color(0xff6A3DE8),
                     fontSize: 15,
                     fontWeight: FontWeight.w500),
-                overlayColor:  const MaterialStatePropertyAll(
+                overlayColor:  const WidgetStatePropertyAll(
                     Colors.white),
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
